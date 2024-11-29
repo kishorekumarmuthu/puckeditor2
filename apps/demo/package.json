@@ -1,0 +1,37 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.7.8",
+    "classnames": "^2.3.2",
+    "lucide-react": "^0.298.0",
+    "next": "^14.2.11",
+    "rc-footer": "^0.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "autoprefixer": "^10.4.20",
+    "eslint-config-custom": "*",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.5.4"
+  },
+  "description": "The `next` recipe showcases one of the most powerful ways to implement Puck using to provide an authoring tool for any route in your Next app.",
+  "main": ".eslintrc.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "",
+  "license": "ISC"
+}
