@@ -93,7 +93,7 @@ export const ToggleSwitchComponent: ComponentConfig = {
       },
     },
   },
-  render: ({ showexport }) => {
+  render: ({ showexport }): any => {
     return showexport == "on" ? (
       <div style={{ paddingBottom: "10px" }}>
         <svg
