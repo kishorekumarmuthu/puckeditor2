@@ -72,23 +72,25 @@ export type ExportIconConfig = {
 
 export type HeroProps = {
   quote?: { index: number; label: string };
-  title: string;
-  title2: string;
-  description: string;
+  title?: string;
+  title2?: string;
+  description?: string;
   align?: string;
-  padding: string;
+  padding?: string;
   image?: {
     mode?: "inline" | "background";
     url?: string;
   };
-  buttons: {
+  buttons?: {
     label: string;
     href: string;
     variant?: "primary" | "secondary";
     more?: { text: string }[];
   }[];
-  DataForm: string;
-  ToggleSwitchComponent: CustomIconProps;
+  DataForm?: string;
+  ToggleSwitchComponent?: CustomIconProps;
+  showexport?: string;
+  AddNewButton?: string;
   // AddNewButton:
   // ExportIcon?: CustomIconProps;
 };
@@ -387,7 +389,7 @@ export const Hero: ComponentConfig<HeroProps> = {
         useEffect(() => {
           const fetchOptions = async () => {
             const response = await api.get("dataform/get_dataforms");
-            const formOptions = response.data.data.map((ele) => ({
+            const formOptions = response.data.data.map((ele: any) => ({
               label: ele.formName,
               value: ele.formName,
               id: ele._id,
@@ -412,7 +414,7 @@ export const Hero: ComponentConfig<HeroProps> = {
                 Select a Data Form
               </option>
               {options.length > 0 &&
-                options.map((opt) => (
+                options.map((opt: any) => (
                   <option key={opt.value} value={opt.id}>
                     {opt.label}
                   </option>
@@ -700,7 +702,7 @@ export const Hero: ComponentConfig<HeroProps> = {
             sort_type: "",
           });
           if (response) {
-            let dataArray = response?.data?.result?.fields?.map((ele) => {
+            let dataArray = response?.data?.result?.fields?.map((ele: any) => {
               return ele.user_data;
             });
             setFormName(response?.data?.result?.data);
@@ -719,33 +721,33 @@ export const Hero: ComponentConfig<HeroProps> = {
       }
     }, [DataForm]);
 
-    const tableStyle = {
+    const tableStyle: any = {
       width: "100%",
       borderCollapse: "collapse",
     };
 
-    const headerStyle = {
+    const headerStyle: any = {
       backgroundColor: "#f4f4f4",
       fontWeight: "bold",
       border: "1px solid #ddd",
       padding: "8px",
     };
 
-    const cellStyle = {
+    const cellStyle: any = {
       border: "1px solid #ddd",
       padding: "8px",
       textAlign: "center",
     };
 
-    const rowEvenStyle = {
+    const rowEvenStyle: any = {
       backgroundColor: "#f9f9f9",
     };
 
-    const rowHoverStyle = {
+    const rowHoverStyle: any = {
       backgroundColor: "#e0e0e0",
     };
 
-    const buttonStyle = {
+    const buttonStyle: any = {
       padding: "10px 20px",
       fontSize: "16px",
       color: "#fff",
@@ -757,7 +759,7 @@ export const Hero: ComponentConfig<HeroProps> = {
       transition: "background-color 0.3s ease",
     };
 
-    const hoverStyle = {
+    const hoverStyle: any = {
       backgroundColor: "#0056b3", // Darker shade for hover effect
     };
 
@@ -785,7 +787,7 @@ export const Hero: ComponentConfig<HeroProps> = {
                 width="30px"
                 height="30px"
                 viewBox="0 0 1024 1024"
-                class="icon"
+                className="icon"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -839,7 +841,7 @@ export const Hero: ComponentConfig<HeroProps> = {
               </tr>
             </thead>
             <tbody>
-              {formData?.map((ele, index) => {
+              {formData?.map((ele: any, index: any) => {
                 return (
                   <>
                     <tr
